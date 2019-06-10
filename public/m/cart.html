@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-web.js"></script>
+    <script src="js/comment.js"></script>
+    <script src="js/cart.js"></script>
+    <style>
+        .mui-table-view-cell:after {
+            height: 0;
+        }
+        .mui-table-view-cell {
+            padding: 0 15px!important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部 start -->
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">产品购物车</h1>
+    </header>
+    <!-- 头部 end -->
+    <!-- 底部 start -->
+    <nav class="mui-bar mui-bar-tab my-footer ">
+        <a class="mui-tab-item " href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon fa fa-shopping-cart mui-active"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <!-- 底部 end -->
+    <div class="mui-content">
+        <ul class="items-cart" id="items">
+          
+           
+        </ul>
+    </div>
+</body>
+    <script type="text/template" id="cart">
+        {{each data value index}}
+         <li class="mui-table-view-cell mui-transitioning">
+             <div class="mui-slider-right mui-disabled">
+                 <p class="mui-btn mui-btn-blue">编辑</p>
+                 <p class="mui-btn mui-btn-red" id="delete" data-id="{{value.id}}">删除</p>
+             </div>
+             <div class="mui-slider-handle">
+                 <ul class="mui-table-view" id="items">
+                     <li >
+                         <a href="javascript:;">
+                             <img class="mui-media-object mui-pull-left" src="{{value.pic[0].picAddr}}">
+                             <div class="mui-media-body">
+                                  {{value.proName}}
+                                 <p class='mui-ellipsis'>
+                                    <input type="checkbox">
+                                     <span style="color:red;">${{value.price}}</span>
+                                     <del>${{value.oldPrice}}</del>
+                                     <span>{{value.size}}</span>X
+                                     <span>{{value.num}}双</span>
+                                 </p>
+                             </div>
+                         </a>
+                     </li>
+                 </ul>
+             </div>
+         </li>
+         {{/each}} 
+    </script>
+</html>

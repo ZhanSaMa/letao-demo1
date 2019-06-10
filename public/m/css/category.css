@@ -1,0 +1,57 @@
+.my-content {
+    position: absolute;
+    width: 100%;
+    top: 44px;
+    bottom: 50px;
+    background-color: #f5f5f5;   
+}
+.category-left,
+.category-right {
+    position: relative;
+    height: 100%;
+}
+.category-left {
+    float: left;
+    width: 80px;  
+}
+.category-right {
+    margin-left: 90px;
+}
+.category-left .links a {
+    display: block;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    border-right: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff;
+}
+.category-left .links .active {
+    background-color: #f5f5f5;
+    border-right: 1px solid transparent;
+}
+.category-right .brand-list {
+    margin-top: 10px;
+    background-color: #fff;
+}
+.category-right .brand-list li {
+    float: left;
+    width: 33.33%;
+}
+.category-right .brand-list li a {
+    text-align: center;
+}
+.category-right .brand-list li img {
+    width: 100%;
+}
+.category-right .brand-list li p {
+    color: black;
+}
+.brand-list .noContent {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px; 
+    font-size: 18px;
+    color: red;
+    border: 1px solid #ccc;
+}

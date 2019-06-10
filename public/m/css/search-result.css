@@ -1,0 +1,17 @@
+.filter {
+    text-align: center;
+    width: 95%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #bbb;
+    margin: 10px auto;
+}
+.mui-icon-arrowdown:before {
+    font-size: 16px;
+}
+#refreshContainer {
+    position: absolute;
+    left: 0;
+    top: 44px;
+    bottom: 50px;
+}

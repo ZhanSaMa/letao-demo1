@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/category.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <script src="assets/artTemplate/template-web.js"></script>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="js/category.js"></script>
+    <script src="js/comment.js"></script>
+</head>
+
+<body>
+    <!-- 头部 start -->
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">乐淘芸购</h1>
+        <a class="mui-icon mui-icon-search mui-pull-right" id="find"></a>
+    </header>
+    <!-- 头部 end -->
+    <!-- 底部 start -->
+    <nav class="mui-bar mui-bar-tab my-footer ">
+        <a class="mui-tab-item " href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item " href="category.html">
+            <span class="mui-icon mui-icon-bars mui-active"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon fa fa-shopping-cart"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <!-- 底部 end -->
+    <!-- 主体内容 start-->
+    <div class="my-content">
+        <!-- 左边区域模块 -->
+        <div class="category-left  mui-clearfix">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="links">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 右边区域模块 -->
+        <div class="category-right ">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <ul class="brand-list mui-clearfix">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 主体内容 end -->
+</body>
+    <!-- 一级分类模板引擎 -->
+    <script type="text/template" id="category">
+        {{each rows value index}}
+            <a href="#" data-id="{{value.id}}">{{value.categoryName}}</a>
+        {{/each}}
+    </script>
+    <!-- 二级分类模板引擎 -->
+    <script type="text/template" id="category-second">
+        {{each rows value index}}
+             <li>
+                 <a href="#">
+                     <img src="{{value.brandLogo}}" alt="">
+                     <p>{{value.brandName}}</p>
+                 </a>
+             </li>
+        {{/each}}
+        {{if rows.length == 0}}
+            <div class="noContent">暂无数据</div>
+        {{/if}}
+    </script>
+</html>

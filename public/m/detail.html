@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/detail.css">
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="js/detail.js"></script>
+    <script src="js/comment.js"></script>
+</head>
+
+<body>
+    <!-- 头部 start -->
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">商品详情</h1>
+        <!-- <a class="mui-icon mui-icon-search mui-pull-right"></a> -->
+    </header>
+    <!-- 头部 end -->
+    <!-- 底部 start -->
+    <nav class="mui-bar mui-bar-tab my-footer ">
+        <a class="mui-tab-item " href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon fa fa-shopping-cart"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    
+    <!-- 底部 end -->
+    <div class="mui-content">
+        <div id="product">
+
+        </div>
+        <!-- 尺码 -->
+        <!-- 数量 start -->
+        <div class="num mui-clearfix">
+            <div class="mui-pull-left">数量：</div>
+            <div class="mui-pull-left num-num">
+                <span class="down">-</span>
+                <input type="text" value="1" id="product-num">
+                <span class="top">+</span>
+            </div>
+            <div class="mui-pull-left">剩余： <a href="javascript:;" class="inventory ">44</a> 件 </div>
+        </div>
+        <!-- 数量 end -->
+        <!-- 按钮 start-->
+        <div class="btns">
+            <a href="cart.html">查看购物车</a>
+            <a href="javascript:;" class="join-cart">加入购物车</a>
+        </div>
+        <!-- 按钮  end -->
+    </div>
+</body>
+     <!-- //模板引擎 -->
+    <script type="text/template" id="detail">
+        <div class="mui-slider">
+            <div class="mui-slider-group">
+                <% for(var i=0;i< pic.length;i++){ %>
+                <div class="mui-slider-item">
+                    <img src="<%=pic[i].picAddr %>" />
+                </div>
+                <% } %>
+            </div>
+        </div>
+        <!-- 轮播图 end -->
+        <!-- 产品标题 start -->
+        <div class="detail">
+            <%=proName %>
+        </div>
+        <!-- 产品标题 end -->
+        <div class="price">
+            价格：
+            <span>$<%=price %></span>
+            <del>$<%=oldPrice %></del>
+        </div>
+        <!-- 尺码 -->
+        <div class="size">
+            尺码：
+            <% var size = size.split('-') %>
+            <!-- ["35","56"] -->
+            <% for(var i=size[0];i<=size[1];i++){ %>
+            <span><%=i %></span>
+            <% } %>
+        </div>
+    </script>
+</html>

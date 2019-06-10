@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/search-result.css">
+    <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <script src="assets/artTemplate/template-web.js"></script>
+    <script src="js/search-result.js"></script>
+    <script src="js/comment.js"></script>
+</head>
+
+<body>
+    <!-- 头部 start -->
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">搜索结果</h1>
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left mui-clearfix"></a>
+    </header>
+    <!-- 头部 end -->
+    <!-- 底部 start -->
+    <nav class="mui-bar mui-bar-tab my-footer ">
+        <a class="mui-tab-item mui-active" href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon fa fa-shopping-cart"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <!-- 底部 end -->
+    <!-- 主体内容 start -->
+    <div id="refreshContainer">
+        <div >
+            <!-- 筛选模块 start -->
+            <div class="mui-row filter">
+                <div class=" mui-col-xs-6" id="priceSort">
+                    价格
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </div>
+                <div class="mui-col-xs-6">
+                    销量
+                    <span class="mui-icon mui-icon-arrowdown"></span>
+                </div>
+            </div>
+            <!-- 筛选模块 end -->
+            <!-- 运动生活专区 start -->
+            <div class="product mui-clearfix">
+                <img src="./images/title1.png" alt="">
+
+            </div>
+            <!-- 运动生活专区 end -->
+        </div>
+    </div>
+    <!-- 主体内容结束 -->
+</body>
+    <script type="text/template" id="keyword">
+        {{each data value index}}
+             <li data-id="{{value.id}}">
+                 <a href="detail.html?id={{value.id}}">
+                     <img src="images/xiaomai.jpg" alt="">
+                     <span class="name">
+                         <!-- adidas阿迪达斯 男式 场下休闲篮球鞋S83700 -->
+                         {{value.proName}}
+                     </span>
+                     <p>
+                         <span>{{value.price}}</span>
+                         <span><del>{{value.oldPrice}}</del></span>
+                     </p>
+                     <button class="buy-right">立即购买</button>
+                 </a>
+             </li>
+        {{/each}}
+    </script>
+</html>

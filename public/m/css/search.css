@@ -1,0 +1,47 @@
+.container {
+    padding: 10px;
+}
+.search {
+    position: relative;
+    width: 100%;
+    height: 31px;
+    border: 1px solid #006699;
+    margin-bottom: 15px;
+}
+.search input {
+    width: 100%;
+    height: 28px;
+    padding-right: 70px;
+    border: none;
+    background-color: none;
+    color: #474747;
+}
+.search button {
+    position: absolute;
+    top: 0;
+    right: -1px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: #006699;
+    color: #fff;
+    border-radius:0;
+}
+.history-top {
+    color: #8f8f94;
+}
+.mui-icon {
+    font-size: 14px;
+}
+.history-top .clear {
+    line-height: normal;
+}
+
+.history li{
+    width: 90%;
+    height: 40px;
+    line-height: 30px;
+    margin: 0 auto;
+    padding: 11px 15px;
+    border-bottom: 1px solid #ccc;
+}
